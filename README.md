@@ -94,3 +94,5 @@ GCA_049998655.1 Uroleucon eupatorifoliae        PRJNA1216975            Sample n
 GCA_046862315.1 Uroleucon formosanum    PRJNA985916             Sample name     Uroleucon formosanum
 GCA_046862315.1 Uroleucon formosanum    PRJNA985916     SRA             SRS18057685
 ```
+This is then used as the refrence database for the unitig looping script unitig-loop.bash
+
