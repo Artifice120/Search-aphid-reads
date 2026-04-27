@@ -96,3 +96,9 @@ GCA_046862315.1 Uroleucon formosanum    PRJNA985916     SRA             SRS18057
 ```
 This is then used as the refrence database for the unitig looping script unitig-loop.bash
 
+awk script used to summarize number of ctdb hits for each aphid taxonomy including zeros
+
+```
+ cat  *.blast | awk -F '\t' 'BEGIN{ OFS="\t" }{ split($2,r,".") ; cc[r[1]]++ ;  } END { for (i in cc) print i, cc[i] }' | awk -F '\t' 'BEGIN{ while((getline<"test-list.tsv")>0){id[$1]=$5} }{ tx[id[$1]]+=$2 ; } END { for (i in tx) { print i"\t"tx[i] } ; for ( m in id ) { if (!( m in tx )) { print id[m]"\t0" } } }' | sort -uk1,1 | sort -nk 2,2
+```
+
